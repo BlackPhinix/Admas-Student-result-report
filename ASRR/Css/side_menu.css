@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+body{
+    min-height: 100vh;
+    background: white;
+}
+
+.navigation{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    width: 300px;
+    border-radius: 10px;
+    background: #0275d8;
+    transition: 0.5s;
+}
+.navigation.active{
+    width: 300px;
+}
+
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 40px;
+}
+
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    width: 100%;
+
+}
+
+.navigation ul li a{
+    position: relative;
+    display: block;
+    display: flex;
+    text-decoration: none;
+    color: white;
+}
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.navigation ul li a .icon ion-icon{
+    font-family: 1.5em;
+}
+
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+}
+.toggle{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #0275d8;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle.active{
+    background: #ff4d89;
+}
+
+.toggle ion-icon{
+    position: absolute;
+    color: white;
+    font-size: 40px;
+    display: none;
+
+}
+
+.toggle ion-icon.open,
+.toggle.active ion-icon.close{
+    display: block;
+}
+
+.toggle ion-icon.close,
+.toggle.acitve ion-icon.open{
+    display: none;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Css/table.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header_file">
+        <ul class="list-inline list-group-inline-md">
+            <li class="list-inline-item">
+                <h3>Admas Universty</h3>
+            </li>
+            <li class="list-inline-item">
+                <div class="active-cyan-4 mb-4" id="searchBox">
+                    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                </div>
+            </li>
+            <li>
+                <div class="year_list">
+                    <select class="form-select">
+                        <option selected>Chose A year </option>
+                        <option value="year1">First Year</option>
+                        <option value="year2">Second Year</option>
+                        <option value="year3">Thired Year</option>
+                        <option value="year4">Forth Year</option>
+                    </select>
+                </div>
+            </li>
+            <li>
+                <div class="semister_result">
+                    <select class="form-select">
+                        <option selected>Chose A Semister </option>
+                        <option value=""> Semister 1</option>
+                        <option value=""> Semister 2</option>
+                        <option value=""> Semister 3</option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div include-html="side_menu.html" id="side_m"></div>
+    <div class="col-md-10">
+        <table id="employee_table" class="table table-striped table-bordered" style="width: 100%;">
+            <thead class="thead-black">
+                <tr>
+                    <td>ID</td>
+                    <td>Frist Name</td>
+                    <td>Last Name</td>
+                    <td>Sex</td>
+                    <td>Test 1</td>
+                    <td>Test 2</td>
+                    <td>Assigment 1</td>
+                    <td>Assigment 2</td>
+                    <td>50%</td>
+                    <td>Final Exam</td>
+                    <td>Grade</td>
+                </tr>
+            </thead>
+
+        </table>
+    </div>
+
+    </div>
+    <div class="form-group" role="row" aria-label="Vertical button">
+        <button type="button" class="btn btn-block btn-primary">Add</button>
+        <button type="button" class="btn btn-block btn-info">Edit</button>
+        <button type="button" class="btn btn-block btn-danger">Complain</button>
+
+    </div>
+
+
+    <script src="/Js/bootstrap.min.js"></script>
+    <script src="/Js/jquery.slim.js"></script>
+    <script src="/Js/script.js"></script>
+    <script>
+        $(function () {
+            $("+[include-html").each(function () {
+                var t = $(this).attr("include-html"),
+                    u = this.id;
+                jQuery.ajax({
+                    url: t,
+                    success: function (t) {
+                        $("#" + u).html(t)
+                    },
+                    error: function (n, c, i) {
+                        var s = n.status + ": " + n.statusText;
+                        $("#" + u).html(t + "-" + s)
+                    }
+                })
+            })
+        });
+    </script>
+</body>
+
+</html>
